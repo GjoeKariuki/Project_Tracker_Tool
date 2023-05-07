@@ -24,10 +24,9 @@ async function getProjectDetails()
                     </p>
                 </summary>
                 ${projdetails[i].projectdescription}
-            </details>
-            
-            `
+            </details>`
         }
     }
+    projdivcont.innerHTML = html
 
 }
