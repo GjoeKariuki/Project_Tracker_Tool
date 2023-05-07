@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css"/>
+    <link rel="stylesheet" href="/styles/projectselipsis.css"/>
+    <link rel="stylesheet" href="/styles/modal.css"/>
+    <title>Dashboard</title>
+</head>
+<body>
+   <div class="container">
+    <div class="sidebar">
+      <div class="userprofile">
+        <img src="/images/2pac.jpg"/>
+        <h4>Username</h4>
+      </div>
+      <div class="nav">
+        <ul>
+            <li><img src="images/dashboardnav.jpg"/>Dashboard</li>
+            <li><ion-icon name="briefcase-outline"></ion-icon>Projects</li>
+            <li><ion-icon name="people-outline"></ion-icon>Users</li>
+            <li><img src="images/logout.jpg"/>logout</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+        <div class="header">
+            <h4><img src="/images/header_icon.jpg" />Admin Dashboard</h4>
+        </div>
+        <div class="cardssection">
+            <h3>Overview</h3>
+            <div class="cards">
+               
+            </div>
+        </div>
+      <div class="projectssection">
+        <div class="recentprojects">
+          <div class="projectslist">
+            <section class="modal hidden">
+              <div class="flex">
+                <h3>Add Project</h3>
+                <button class="btn-close">⨉</button>
+              </div>
+             
+              <input type="text" id="projectname" placeholder="projectname" />
+              <input type="text" id="projectdescription" placeholder="projectdescription@js.com" />
+              <select id="assigneduser">
+            
+        
+              </select>
+              <button class="btn">Add Project</button>
+            </section>
+            
+            <div class="overlay hidden"></div>
+            <div class="addcard">
+                <h3>Recent Projects </h3>
+                <a class="btn-open">  <h4><ion-icon name="add-circle-outline"></ion-icon></h4></a>
+              
+            </div>
+          <div class="projectcards">
+            
+          </div>
+          </div>
+        </div>
+        <div class="userslist">
+            <div class="addcard">
+                <h3>Users List </h3>
+                <h4><ion-icon name="add-circle-outline"></ion-icon></h4>
+            </div>
+           <div class="usersdiv">
+            <div class="userscard">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h5>username</h5>
+                <h5>project</h5>
+                <h5><ion-icon name="trash-outline"></ion-icon></h5>
+            </div>
+            <div class="userscard">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h5>username</h5>
+                <h5>project</h5>
+                <h5><ion-icon name="trash-outline"></ion-icon></h5>
+            </div>
+            <div class="userscard">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h5>username</h5>
+                <h5>project</h5>
+                <h5><ion-icon name="trash-outline"></ion-icon></h5>
+            </div>
+            
+           </div>
+        </div>
+      </div>
+    <div class="footer">
+            <p> &copy; Dashboard.All Rights Reserved</p>
+    </div>
+    </div>
+    
+   </div>
+   <script>var exports = {};</script>
+   <script src="./dist/main.js"></script>
+   <script src="./dist/modal.js"></script>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
