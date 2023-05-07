@@ -9,11 +9,17 @@ function authoriseUser() {
         document.querySelector("body")!.style.display = "block";
         // console.log("authenticated")
     }
-    // logout trigger
+    // logout trigger for user
     document.querySelector("#logoutuser")!.addEventListener("click", (e) => {    
-        console.log("logoutuser clicked");
+        // console.log("logoutuser clicked");
         window.location.href = "/login.html";
-    });    
+    });
+    // logout trigger for admin
+    document.querySelector("#listlogout")!.addEventListener("click", (e) => {    
+        // console.log("logoutuser clicked");
+        window.location.href = "/login.html";
+    });
+      
  }
 
 authoriseUser()

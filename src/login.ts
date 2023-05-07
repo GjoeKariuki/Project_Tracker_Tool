@@ -36,6 +36,14 @@ async function validateLogin() {
         document.getElementById("passwordspan")!.innerText = "";
         // redirect
         loginForm.submit();
+        if(loginedusername == 'admin')
+        {
+            
+            window.location.href = "/index.html";
+        }
+        else {
+            window.location.href = "/user.html";
+        }
         localStorage.setItem("auth",'1');
     }
     else if(!userdetail)
