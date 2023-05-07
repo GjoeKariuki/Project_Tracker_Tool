@@ -30,3 +30,5 @@ async function getProjectDetails()
     projdivcont.innerHTML = html
 
 }
+
+getProjectDetails()
