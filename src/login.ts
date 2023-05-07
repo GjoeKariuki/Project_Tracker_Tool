@@ -9,6 +9,7 @@ async function validateLogin() {
     // get our values
     const loginedusername = (document.getElementById("loginusername")! as HTMLInputElement).value;
     const loginedpassword = (document.getElementById("loginpassword")! as HTMLInputElement).value;
+    const loginForm = document.getElementById('loginform')! as HTMLFormElement;
 
     // fetch username and passwords from db
     // put into function    
@@ -34,6 +35,8 @@ async function validateLogin() {
         document.getElementById("passwordspan")!.classList.remove("error-message");
         document.getElementById("passwordspan")!.innerText = "";
         // redirect
+        loginForm.submit();
+        localStorage.setItem("auth",'1');
     }
     else if(!userdetail)
     {
@@ -71,11 +74,17 @@ async function validateLogin() {
     
  }
 
+ 
+
+
+
 // form trigger
 document.getElementById('loginform')!.addEventListener("submit", (event) => {
     event.preventDefault(); // prevents form from submittin
     validateLogin(); // call validation
 })
+
+
 
 
 
