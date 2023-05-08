@@ -1,11 +1,6 @@
 {
   "users": [
     {
-      "username": "mickeydee",
-      "password": "mdpassword",
-      "id": 1
-    },
-    {
       "username": "mcdonalds",
       "password": "mcpassword",
       "id": 2
