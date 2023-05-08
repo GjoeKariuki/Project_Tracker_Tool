@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user.css">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-bar">
+            <div class="profile">
+                <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg" alt="pfp">
+                <h4>Brian Gathai</h4>
+            </div>
+            <div class="menu">
+                <div>
+                    <img src="./images/dashboard.png" alt="icon">
+                    Dashboard
+                </div>
+                <div>
+                    <img src="./images/projects.png" alt="icon">
+                    Projects
+                </div>
+                <div id="logoutuser">
+                    <img src="./images/log-out.png" alt="icon">
+                    Log Out
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <img src="./images/user-dashboard.png" alt="">
+            User Dashboard
+        </div>
+        <div class="content">
+            <div class="overview">
+                <h2>Overview</h2>
+                <div class="overview-cards">
+                    <div class="assigned">
+                        <div class="assigned-img">
+                        <img src="./images/Rectangle 35.png" alt="assigned">
+                        <img src="./images/Rectangle 35.png" alt="assigned">
+                        </div>
+                        <h3>Assigned</h3>
+                        <h2>1</h2>
+                    </div>
+                    <div class="completed" id="complete">
+                        <img src="./images/complete.png" alt="completed">
+                        <h3>completed</h3>
+                        <h2>1</h2>
+                    </div>
+                    <div class="pending" id="pending">
+                        <img src="./images/pending.png" alt="Pending">
+                        <h3>Pending</h3>
+                        <h2>1</h2>
+                </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="assigned-details">
+                    <h3>Assigned</h3>
+                    <div class="assigned-project-details">
+                            <div id="assigndivcont"></div>                     
+                    </div>
+                </div>
+                <div class="complete-details">
+                    <h3>Projects Done</h3>
+                    <div class="complete-project-details">
+                            <div id="projdivcont">
+                                
+                            </div>
+                            <!-- <details>
+                                <summary>
+                                <p>
+                                    <span>Project 1</span>
+                                    <span>Brian Gathai</span>
+                                    <span id="complete"> Complete</span>
+                                </p>
+                                </summary>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique esse culpa distinctio 
+                            </details>
+                         -->
+                        
+                            <!-- <details>
+                                <summary>
+                                <p><span>Project 2</span><span>Brian Gathai</span><span id="complete"> Complete</span></p>
+                                </summary>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique esse culpa distinctio 
+                            </details> -->
+                       
+                        
+                            <!-- <details>
+                                <summary>                                  
+                                    <p><span>Project 3</span><span>Brian Gathai</span><span id="complete"> Complete</span></p>
+                                </summary>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique esse culpa distinctio 
+                            </details> -->
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer><p>&copy; Dashboard All Rights Reserved</p></footer>
+    </div>
+    <script src="./dist/user.js"></script>
+    <script src="./dist/logout.js"></script>
+</body>
+</html>

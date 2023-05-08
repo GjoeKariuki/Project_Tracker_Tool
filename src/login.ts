@@ -9,7 +9,9 @@ async function validateLogin() {
     // get our values
     const loginedusername = (document.getElementById("loginusername")! as HTMLInputElement).value;
     const loginedpassword = (document.getElementById("loginpassword")! as HTMLInputElement).value;
-
+    const loginForm = document.getElementById('loginform')! as HTMLFormElement;
+    const usernamespan = document.getElementById("usernamespan") as HTMLSpanElement;
+    const passwordspan = document.getElementById("passwordspan") as HTMLSpanElement;
     // fetch username and passwords from db
     // put into function    
     // const usersdetails = getUsersDetails(); 
@@ -27,40 +29,50 @@ async function validateLogin() {
 
     if(userdetail)
     {
-        console.log("nikuzuri");
+        // console.log("nikuzuri");
         //console.log(userdetail);
-        document.getElementById("usernamespan")!.classList.remove("error-message");
-        document.getElementById("usernamespan")!.innerText = "";
-        document.getElementById("passwordspan")!.classList.remove("error-message");
-        document.getElementById("passwordspan")!.innerText = "";
+        usernamespan.classList.remove("error-message");
+        usernamespan.innerText = "";
+        passwordspan.classList.remove("error-message");
+        passwordspan.innerText = "";
         // redirect
+        loginForm.submit();
+        if(loginedusername == 'admin')
+        {
+            
+            window.location.href = "/index.html";
+        }
+        else {
+            window.location.href = "/user.html";
+        }
+        localStorage.setItem("auth",'1');
     }
     else if(!userdetail)
     {
         // redirect
-        console.log("nikubad");
+        // console.log("nikubad");
         for(let i=0; i<usersdetails.length; i++)
         {
             if(usersdetails[i].username != loginedusername && usersdetails[i].password != loginedpassword)
             {
-                document.getElementById("usernamespan")!.innerText = "usernames do not match".toUpperCase();
-                document.getElementById("usernamespan")!.classList.add("error-message"); 
-                document.getElementById("passwordspan")!.innerText = "passwords do not match".toUpperCase();
-                document.getElementById("passwordspan")!.classList.add("error-message"); 
+                usernamespan.innerText = "usernames do not match".toUpperCase();
+                usernamespan.classList.add("error-message"); 
+                passwordspan.innerText = "passwords do not match".toUpperCase();
+                passwordspan.classList.add("error-message"); 
             }
             else if(usersdetails[i].password == loginedpassword && usersdetails[i].username != loginedusername)
             {
-                document.getElementById("usernamespan")!.innerText = "usernames do not match".toUpperCase();
-                document.getElementById("usernamespan")!.classList.add("error-message"); 
-                document.getElementById("passwordspan")!.classList.remove("error-message");
-                document.getElementById("passwordspan")!.innerText = "";               
+                usernamespan.innerText = "usernames do not match".toUpperCase();
+                usernamespan.classList.add("error-message"); 
+                passwordspan.classList.remove("error-message");
+                passwordspan.innerText = "";               
             }
             else if(usersdetails[i].username == loginedusername && usersdetails[i].password != loginedpassword)
             {
-                document.getElementById("passwordspan")!.innerText = "passwords do not match".toUpperCase();
-                document.getElementById("passwordspan")!.classList.add("error-message");
-                document.getElementById("usernamespan")!.classList.remove("error-message");
-                document.getElementById("usernamespan")!.innerText = ""; 
+                passwordspan.innerText = "passwords do not match".toUpperCase();
+                passwordspan.classList.add("error-message");
+                usernamespan.classList.remove("error-message");
+                usernamespan.innerText = ""; 
             }
                         
         }       
@@ -71,11 +83,17 @@ async function validateLogin() {
     
  }
 
+ 
+
+
+
 // form trigger
 document.getElementById('loginform')!.addEventListener("submit", (event) => {
     event.preventDefault(); // prevents form from submittin
     validateLogin(); // call validation
 })
+
+
 
 
 
