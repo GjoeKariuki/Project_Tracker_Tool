@@ -48,6 +48,12 @@ async function saveCredentials()
     }
     else if(!checked)
     {
+        usedpasswordspan.classList.remove("error-message");
+        usedpasswordspan.innerText = "";
+        repeatedpasswordspan.classList.remove("error-message");
+        repeatedpasswordspan.innerText = "";
+        usednamespan.classList.remove("error-message");
+        usednamespan.innerText = "";
         // check if passwords are same
         if(registeredpassword === confirmedpassword){
             // print passwords match
