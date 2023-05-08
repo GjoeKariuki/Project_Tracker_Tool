@@ -25,14 +25,14 @@
     {
       "projectname": "testname",
       "projectdescription": "test description",
-      "assigneduser": "john",
-      "status": "completed",
+      "assigneduser": "mcdonalds",
+      "status": "pending",
       "id": 33
     },
     {
-      "projectname": "testname",
+      "projectname": "testproject",
       "projectdescription": "test description",
-      "assigneduser": "mcdonalds",
+      "assigneduser": "mickeydee",
       "status": "pending",
       "id": 34
     }

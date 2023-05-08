@@ -3,6 +3,7 @@ import Project from "./classes/projectclass";
 let projectcards = document.querySelector(".projectcards");
 let btn = document.querySelector(".btn");
 let assigneduser = document.querySelector("#assigneduser");
+let listusers = document.querySelector(".usersdiv")!;
 let overviewcards = document.querySelector(".cards");
 
 async function renderoverview() {
@@ -56,7 +57,7 @@ async function renderoverview() {
   overviewcards!.innerHTML=html
 }
 
-renderoverview();
+
 
 async function renderprojects() {
   let response = await fetch("http://localhost:3000/Projects");
@@ -196,12 +197,83 @@ async function fetchusers() {
     );
   });
 
-  console.log(unassignedUsers); // This will log an array of users that are not assigned to any project
 
   unassignedUsers.forEach((user: any) => {
     let html = `<option>${user.username}</option>`;
     assigneduser!.innerHTML += html;
   });
 }
+
+
+// async function renderusers() {
+
+//   let response = await fetch("http://localhost:3000/users");
+//   let users = await response.json();
+//   const projects = await fetch(" http://localhost:3000/Projects");
+//   const rprojects = await projects.json();
+
+// // Loop through the users array
+//   users.forEach((user:any )=> {
+//   console.log(`User: ${user.username}`);
+
+//   // Find the project assigned to the current user
+//   const assignedProject = rprojects.find((project:any) => project.assigneduser === user.username);
+
+//   if (assignedProject) {
+//     console.log(`Assigned project: ${assignedProject.projectname} - ${assignedProject.projectdescription} - ${assignedProject.status}`);
+//   } else {
+//     console.log('No assigned project');
+//   }
+//       let html = `
+//     <div class="userscard">
+//     <ion-icon name="person-circle-outline"></ion-icon>
+//     <h5>${user.username}</h5>
+
+
+//     ${assignedProject ? `
+//       <h5> ${assignedProject.projectname}</h5>
+//   ` : '<h5>N/A</h5>'}
+//     <h5><ion-icon name="trash-outline"></ion-icon></h5>
+// </div>`
+// listusers!.innerHTML += html;
+// });  
+// }
+async function renderusers() {
+  let response = await fetch("http://localhost:3000/users");
+  let users = await response.json();
+  const projects = await fetch("http://localhost:3000/Projects");
+  const rprojects = await projects.json();
+
+  // Loop through the users array
+  users.forEach((user: any) => {
+    if (user.username !== "admin") { // Skip user with username "admin"
+      console.log(`User: ${user.username}`);
+
+      // Find the project assigned to the current user
+      const assignedProject = rprojects.find((project: any) => project.assigneduser === user.username);
+
+      if (assignedProject) {
+        console.log(`Assigned project: ${assignedProject.projectname} - ${assignedProject.projectdescription} - ${assignedProject.status}`);
+      } else {
+        console.log('No assigned project');
+      }
+
+      let html = `
+        <div class="userscard">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <h5>${user.username}</h5>
+          ${assignedProject ? `
+            <h5>${assignedProject.projectname}</h5>
+          ` : '<h5>N/A</h5>'}
+          <h5><ion-icon name="trash-outline"></ion-icon></h5>
+        </div>
+      `;
+      listusers!.innerHTML += html;
+    }
+  });
+}
+
+renderoverview();
 renderprojects();
+renderusers();
 fetchusers();

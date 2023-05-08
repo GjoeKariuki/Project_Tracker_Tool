@@ -51,6 +51,10 @@ ion-icon {
   color: white;
   padding: 10px;
 }
+.sidebar .nav ul li a {
+  color: white;
+  text-decoration: none;
+}
 .sidebar .nav ul li img {
   margin-right: 3px;
   height: 15px;
