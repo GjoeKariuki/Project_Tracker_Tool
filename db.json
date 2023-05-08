@@ -1,11 +1,6 @@
 {
   "users": [
     {
-      "username": "mickeydee",
-      "password": "mdpassword",
-      "id": 1
-    },
-    {
       "username": "mcdonalds",
       "password": "mcpassword",
       "id": 2
@@ -19,6 +14,11 @@
       "username": "john",
       "password": "password",
       "id": 4
+    },
+    {
+      "username": "laurynhill",
+      "password": "masakusevens",
+      "id": 5
     }
   ],
   "Projects": [
